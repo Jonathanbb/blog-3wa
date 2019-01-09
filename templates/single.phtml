@@ -1,0 +1,9 @@
+<main class ="container">
+	<h2>-Derniers articles publiés-</h2>
+	<?php foreach($oneArticle as $a) : ?>
+		<a href="../src/single.php?id=<?=$a["id"]?>"<h2><?= $a['titre'] ?></h2></a>
+		<h3><strong> Date de publication : <?= $a['datePublication']?></strong><h3>
+		<h3><strong> Auteur : <?= $a['prenom']." ".$a['nom']?></strong><h3>
+			<p><?= $a['texte'] ?></p>
+		<?php endforeach ?>
+</main>

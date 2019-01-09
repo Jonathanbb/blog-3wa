@@ -1,0 +1,564 @@
+/*Général*/
+	 
+
+* {
+	box-sizing: border-box;
+}
+
+.clear {
+	clear:both;
+}
+
+
+body{
+	font-size: 1rem;
+	font-family: 'Bree Serif', serif;
+	background-image: url(../img/fond.png);
+	line-height: 2rem;
+	color: #8a8a8a;
+}
+
+h1, h2, h3 {
+	line-height: 3rem;
+}
+
+h2::after{
+	content:"";
+	display:block;
+	background: #f1f2f4; 
+	height:2px;
+	width:100%;
+	margin:10px auto;
+	}
+
+.container
+{
+	margin:0 auto;
+	max-width: 1100px;
+}
+
+img
+{
+	max-width: 100%;
+}
+
+header nav {
+	font-size:1.2rem;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 2rem;
+	text-align:center;
+	color:#d43c62;
+}
+
+h3 {
+	font-size: 1.6rem;
+}
+
+h4 {
+	font-size: 1.4rem;
+}
+
+*{
+	font-weight: normal;
+}
+
+
+.clear{
+	clear : both;
+}
+
+
+/*Header*/
+
+header {
+	margin:0 auto;
+	display: block;
+	text-align:center;
+	color: #909090;
+	padding-bottom: 20px;
+}
+
+header nav a{
+	display: block;
+	text-decoration: none;
+	color: #909090;
+}
+
+img {
+	width: 40px;
+	display : block;
+	margin-left: auto;
+	margin-right: auto;
+} 
+
+.nav{
+	padding: 10px;
+} 
+
+/*Main*/
+
+/*Section image*/
+   
+.bonjour {
+	background-image: url(../img/bg_header.png);
+	background-size: cover;
+	padding: 70px 20px;
+	text-align : center;
+	color : white;
+	background-position: left left;
+	position:relative;
+} 
+
+.overlay
+{
+	position:absolute;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,.3);
+	top:0;
+	z-index:1;
+	left:0;
+}
+.content-wrapper
+{
+	z-index:2;
+	position:relative;
+}
+.bonjour a{
+	text-decoration: none;
+	color: white;
+} 
+
+.bouton {
+	background-color: #f5295a;
+	color : white;
+	width: 50%;
+	border-radius: 3px;
+	margin-left: auto;
+	margin-right : auto;
+	padding: 15px;
+	margin-bottom: 15px;
+	}
+
+
+/*Section compétences*/
+
+.section2{
+	padding-top: 60px;
+} 
+
+
+.competences{
+	display : block;
+	text-align:center;
+	padding-bottom: 30px;
+	padding-top: 30px;
+} 
+
+.competences img{
+	width: 200px;
+} 
+
+
+/*Section services*/
+
+.section3 {
+	padding: 70px 40px;
+} 
+
+.section3 h4{
+	color:#d43c62;
+	text-align:center;
+} 
+
+.section3 i{
+	font-size:1.2em;
+} 
+
+.services{
+	padding-bottom: 30px;
+	padding-top: 30px;
+	display : block;
+	text-align:center;
+} 
+
+span.cercle{
+	padding-top: 35px;
+	display: block;
+	width: 100px;
+    height: 100px;
+  	background-color: #eff0f2;
+  	border-radius: 50%;
+  	border :1px solid #dfe0e2;
+  	margin: 25px auto;
+  } 
+
+
+/*Section réalisations*/
+
+ h4{
+	color:#d43c62;
+	text-align:left;
+} 
+
+
+.realisations{
+	text-align: left;
+	padding: 15px;
+}	
+
+
+.realisations article img {
+	width: 100%;
+}	
+
+.realisations a {
+	padding-right: 150px;
+	text-decoration: none;
+	color:#d43c62;
+
+}
+
+.realisations i {
+	padding-left: 5px;	
+}
+
+
+
+/*Section contact*/
+
+.contact {
+padding: 70px 40px;
+text-align : center;	
+} 
+
+.contact input:not([type="submit"]):not([type="reset"]) {
+	width: 100%;
+	height:60px;
+	border-radius:30px;
+	background-repeat:no-repeat;
+	background-size:50px;
+	background-position:left 5px center;
+	padding-left:65px;
+	margin-top: 10px;
+	text-align:left;
+	margin-bottom: 10px;
+	border: 0.5px solid #ccc;	
+	background-color: transparent;
+} 
+
+.prenom {
+background-image: url(../img/bg_form_name.svg);	
+} 
+
+.mail{
+background-image: url(../img/bg_form_mail.svg);	
+} 
+
+.message{
+background-image: url(../img/bg_form_message.svg);	
+} 
+
+.contact form {
+padding-bottom:30px;
+} 
+
+.submit{
+	display: inline-block;
+	background-color: #f5295a;
+	padding: 20px 10px;
+	width: 40%;
+	color:white;
+	border : none;
+	margin: 40px 2px;
+	}
+
+
+.reset{
+	display : inline-block;
+	background-color: #979797;
+	padding: 20px 10px;
+	width: 40%;
+	margin: 40px 2px;
+	color:white;
+	border : none;
+	}
+
+.input{
+	background-color: transparent;
+	}
+
+
+/*Footer*/
+
+footer{
+	margin : 0 auto;
+	text-align: center;
+	padding: 30px 20px;
+	}
+
+footer img{
+	width: 50px;
+	}
+
+footer a{
+	text-decoration: none;
+	color: #f5295a;
+	}
+
+
+
+
+
+/*Media tablette*/
+
+@media screen and (min-width: 768px){
+
+
+
+/*Header*/
+
+nav {
+	padding: 0 45px;
+}
+
+
+.nav {
+	display: inline-block;
+	padding: 20px;
+}
+
+img {
+	width: 100px;
+} 
+
+
+/*Section image*/
+  
+
+.bonjour {
+	padding: 120px 80px;
+	background-position: center center;
+	}
+
+
+.bonjour p {
+	padding-bottom: 40px;
+	}
+
+
+
+
+/*Section réalisations*/
+
+ h4{
+	color:#d43c62;
+	text-align:left;
+	font-weight: bold;
+} 
+
+
+.realisations{
+	text-align: left;
+}	
+
+
+.realisations article img {
+	padding-right: 12px;
+	padding-left: 12px;
+	padding-bottom: 8px;
+	width: 350px;
+}	
+
+.right {
+	float: right;
+}	
+
+.left {
+	float: left;
+}	
+
+
+/*Form*/
+
+.contact input.prenom:not([type="submit"]):not([type="reset"]) {
+	float: left;
+	width:49%;
+	margin: 3.3px;
+	display:block;
+	}
+
+.contact input.mail:not([type="submit"]):not([type="reset"]) {
+	float: right;
+	width:49%;
+	margin: 3.3px;
+	display:block;
+	}
+
+
+
+
+
+.submit{
+	padding: 20px 10px;
+	width: 20%;
+	}
+
+
+.reset{
+	padding: 20px 10px;
+	width: 20%;
+	}
+
+/*Footer*/
+
+footer img{
+	width: 70px;
+	}
+
+}
+
+
+
+
+/*Media deckstop*/
+
+@media screen and (min-width: 1024px){
+
+
+
+/*Général*/
+
+
+
+
+
+/*Header*/
+
+nav {
+	display: inline-block;
+	margin-left: 190px;
+
+}
+
+.nav {
+	display: inline-block;
+	padding: 50px;
+}
+
+img {
+	width: 65px;
+	display: inline-block;
+	vertical-align: middle;
+	padding-right: 10px;
+	transition:2s;
+} 
+
+header img:hover {
+	width: 85px;
+} 
+
+header h1:hover {
+	color:#d43c62;
+} 
+
+header img:hover {
+	width: 85px;
+} 
+
+header h1{
+	display: inline-block;
+	transition:2s;
+} 
+
+header nav a:hover {
+	color:#d43c62;
+}
+
+header nav i:hover {
+	color:#d43c62;
+	font-size:0.5em;
+}
+
+
+header nav a {
+	transition:1s;
+}
+
+header nav i {
+	transition:1s;
+}
+
+
+
+
+/*Section compétences*/
+
+
+
+.competences{
+	display : inline-block;
+	width: calc(100%/3);
+} 
+
+
+
+/*Section services*/
+
+.services{
+	display : inline-block;
+	width: calc(100%/3 - 0.5em);
+	padding-right: 10px;
+	padding-left: 10px;
+} 
+
+
+@keyframes effet {
+  
+  from {transform: translateY(0);} 
+ 
+ 	to {transform: translateY(40px);}
+	
+	}
+
+
+span.cercle:hover {
+	animation: effet 0.7s ease infinite alternate;
+} 
+
+
+
+
+/*form*/
+
+.contact input.prenom:not([type="submit"]):not([type="reset"]) {
+	float: left;
+	width: calc(50%-7px);
+	display:block;
+	}
+
+.contact input.mail:not([type="submit"]):not([type="reset"]) {
+	float: right;
+	width: calc(50%-7px);
+	display:block;
+	}
+
+
+.submit{
+	padding: 20px 10px;
+	width: 12%;
+	}
+
+
+.reset{
+	padding: 20px 10px;
+	width: 12%;
+	}
+
+}
