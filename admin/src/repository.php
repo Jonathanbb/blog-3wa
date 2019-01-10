@@ -13,14 +13,30 @@ function openDatabase(string $database, string $user, string $password) : PDO
   return new PDO("mysql:host=localhost;dbname=$database", 'root', 'troiswa');
 }
 
+function addUser(PDO $db)
+{
+  $statement = $db->prepare('INSERT INTO utilisateur(nom, prenom, email, pseudo, mot_de_passe)
+  VALUES(:nom, :prenom, :email, :pseudo, :mot_de_passe)');
+  if(isset($_POST["add"])){
+    $err = $statement->execute(array(
+  	'nom' => $_POST["nom"],
+  	'prenom' => $_POST["prenom"],
+    'email'  => $_POST["email"],
+    'pseudo'  => $_POST["pseudo"],
+    'mot_de_passe'  => $_POST["mot_de_passe"]
+  	));
+    }
+  return $statement;
+}
+
+
 function writeArticle(PDO $db)//l.25 fait référence à fonction uploadFile "insert into"(l.19) permet de rentrer valeurs dans formulaire qui seront seront sauvegardées dans sql
 {
-$statement = $db->prepare('INSERT INTO billet(titre, texte, datePublication, image, categorie) VALUES(:titre, :texte, :datePublication, :image, :categorie)');
+$statement = $db->prepare('INSERT INTO billet(titre, texte, image, categorie) VALUES(:titre, :texte, :image, :categorie)');
  if(isset($_POST["add"])){
   $err = $statement->execute(array(
   	'titre' => $_POST["titre"],
   	'texte' => $_POST["texte"],
-    'datePublication'  => $_POST["datePublication"],
     'image'  => $_FILES["image"]['name'],
     'categorie'  => $_POST["categorie"],
   	));

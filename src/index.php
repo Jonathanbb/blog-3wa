@@ -1,7 +1,7 @@
 <?php
 
 include "../admin/src/repository.php";
-include "users.php";
+//include "users.php";
 
 $db = openDatabase('blog', 'root', 'troiswa');
 $article = writeArticle($db);
