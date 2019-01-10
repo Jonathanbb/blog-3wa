@@ -3,15 +3,18 @@
 	<div class ="content-wrapper">
 		<h1>Bonjour et bienvenue sur mon Blog</h1>
 		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		<a href="#" class="bouton">Découvrez-moi!</a>
+		<a href="#" class="bouton">Chercher un article</a>
 	</div>
 </section>
 <main class ="container">
 	<h2>-Derniers articles publiés-</h2>
 	<?php foreach($productArticle as $a) : ?>
-		<a href="../src/single.php?id=<?=$a["id"]?>"<h2><?= $a['titre'] ?></h2></a>
-		<h3><strong> Date de publication : <?= $a['datePublication']?></strong><h3>
-		<h3><strong> Auteur : <?= $a['prenom']." ".$a['nom']?></strong><h3>
-			<p><?= $a['texte'] ?></p>
+		<h2><?= $a['titre'] ?></h2>
+		<caption><strong> Date de publication : <?= substr($a['dateCreation'],0,10)?></caption>
+		<caption><strong> Catégorie : <?= $a['name']?></caption>
+		<p><strong> Auteur : <?= $a['prenom']." ".$a['nom']?></p>
+			<p><?= substr ($a['texte'],0,200) ?>... 	<a href="../src/single.php?id=<?=$a["id"]?>"<p>Lire l'article</p></a></p>
+
+			<img class ="picture" src=../img/<?= $a['image'] ?>>
 		<?php endforeach ?>
 </main>

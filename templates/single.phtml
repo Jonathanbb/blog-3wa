@@ -1,9 +1,24 @@
 <main class ="container">
 	<h2>-Derniers articles publiés-</h2>
-	<?php foreach($oneArticle as $a) : ?>
-		<a href="../src/single.php?id=<?=$a["id"]?>"<h2><?= $a['titre'] ?></h2></a>
-		<h3><strong> Date de publication : <?= $a['datePublication']?></strong><h3>
-		<h3><strong> Auteur : <?= $a['prenom']." ".$a['nom']?></strong><h3>
-			<p><?= $a['texte'] ?></p>
-		<?php endforeach ?>
-</main>
+
+	<h2><?= $oneArticle['titre'] ?></h2>
+	<h3><strong> Date de publication : <?= substr($oneArticle['dateCreation'],0,10)?></strong><h3>
+		<h3><strong> Auteur : <?= $oneArticle['prenom']." ".$oneArticle['nom']?></strong><h3>
+			<img class ="picture" src=../img/<?= $oneArticle['image'] ?>>
+			<p><?= $oneArticle['texte'] ?></p>
+			<h2>Ecrivez un commentaire</h2>
+			<!--<p>?= $showComment[0]['texte'] ?></p>-->
+			<form class="" action="comment.php" method="post">
+				<!-- input caché qui reprend l'id de l'article que nous voulons commenter et qui affecte
+				cette valeur dans commentaire ("billet" qui est = à l'id dans billet) -->
+				<input type="hidden" name="billet" value="<?= $oneArticle['id']?>" />
+				<textarea type="text" class= "post" name="texte" placeholder ="Ecrire votre commentaire" ></textarea>
+				<p>
+					<input class = "submit" type="submit" value="add" name="add">
+				</p>
+				<?php foreach($showComment as $a) : ?>
+					<p> Date : <?= substr($a['datePublication'],0,10) ?></p>
+					<p> Commentaire: <?= $a['texte'] ?></p>
+				<?php endforeach ?>
+		</form>
+	</main>

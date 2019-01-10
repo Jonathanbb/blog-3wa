@@ -1,0 +1,21 @@
+<main class ="container">
+<section class="contact">
+  <h2>-Postez votre article-</h2>
+  <form class="" action="form.php" method="post" enctype="multipart/form-data">
+    <input class = "mail" type="date" placeholder="date" name="datePublication" value = "datePublication">
+    <input class = "mail" type="text" placeholder="votre titre" name="titre">
+
+    <select class="post2" name="categorie">
+      <option value="2">Sport</option>
+      <option value="3">Voyage</option>
+      <option value="4">Gastronomie</option>
+    </select>
+
+    <input type = "file" id ="post3" placeholder ="Télécharger une photo" name="image">
+    <div class = "clear"></div>
+    <textarea type="text" class= "post" name="texte" placeholder ="Ecrire votre article" ></textarea>
+    <p>
+      <input class = "submit" type="submit" value="add" name="add">
+    </p>
+  </form>
+</main>

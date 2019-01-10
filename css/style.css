@@ -1,5 +1,5 @@
 /*Général*/
-	 
+
 
 * {
 	box-sizing: border-box;
@@ -25,7 +25,7 @@ h1, h2, h3 {
 h2::after{
 	content:"";
 	display:block;
-	background: #f1f2f4; 
+	background: #f1f2f4;
 	height:2px;
 	width:100%;
 	margin:10px auto;
@@ -40,6 +40,12 @@ h2::after{
 img
 {
 	max-width: 100%;
+}
+
+.picture
+{
+	width: 500px;
+	
 }
 
 header nav {
@@ -95,16 +101,16 @@ img {
 	display : block;
 	margin-left: auto;
 	margin-right: auto;
-} 
+}
 
 .nav{
 	padding: 10px;
-} 
+}
 
 /*Main*/
 
 /*Section image*/
-   
+
 .bonjour {
 	background-image: url(../img/bg_header.png);
 	background-size: cover;
@@ -113,7 +119,7 @@ img {
 	color : white;
 	background-position: left left;
 	position:relative;
-} 
+}
 
 .overlay
 {
@@ -133,7 +139,7 @@ img {
 .bonjour a{
 	text-decoration: none;
 	color: white;
-} 
+}
 
 .bouton {
 	background-color: #f5295a;
@@ -151,7 +157,7 @@ img {
 
 .section2{
 	padding-top: 60px;
-} 
+}
 
 
 .competences{
@@ -159,34 +165,34 @@ img {
 	text-align:center;
 	padding-bottom: 30px;
 	padding-top: 30px;
-} 
+}
 
 .competences img{
 	width: 200px;
-} 
+}
 
 
 /*Section services*/
 
 .section3 {
 	padding: 70px 40px;
-} 
+}
 
 .section3 h4{
 	color:#d43c62;
 	text-align:center;
-} 
+}
 
 .section3 i{
 	font-size:1.2em;
-} 
+}
 
 .services{
 	padding-bottom: 30px;
 	padding-top: 30px;
 	display : block;
 	text-align:center;
-} 
+}
 
 span.cercle{
 	padding-top: 35px;
@@ -197,7 +203,7 @@ span.cercle{
   	border-radius: 50%;
   	border :1px solid #dfe0e2;
   	margin: 25px auto;
-  } 
+  }
 
 
 /*Section réalisations*/
@@ -205,18 +211,18 @@ span.cercle{
  h4{
 	color:#d43c62;
 	text-align:left;
-} 
+}
 
 
 .realisations{
 	text-align: left;
 	padding: 15px;
-}	
+}
 
 
 .realisations article img {
 	width: 100%;
-}	
+}
 
 .realisations a {
 	padding-right: 150px;
@@ -226,7 +232,7 @@ span.cercle{
 }
 
 .realisations i {
-	padding-left: 5px;	
+	padding-left: 5px;
 }
 
 
@@ -235,8 +241,8 @@ span.cercle{
 
 .contact {
 padding: 70px 40px;
-text-align : center;	
-} 
+text-align : center;
+}
 
 .contact input:not([type="submit"]):not([type="reset"]) {
 	width: 100%;
@@ -249,25 +255,69 @@ text-align : center;
 	margin-top: 10px;
 	text-align:left;
 	margin-bottom: 10px;
-	border: 0.5px solid #ccc;	
+	border: 0.5px solid #ccc;
 	background-color: transparent;
-} 
+}
+
+
+
+.container .contact .test{
+	margin: 100px;
+	color:black;
+}
+
+.container .contact .post{
+	width: 100%;
+	height:200px;
+	border-radius:30px;
+	background-repeat:no-repeat;
+	background-size:50px;
+	background-position:left 5px center;
+	padding-left:65px;
+	margin-top: 10px;
+	text-align:left;
+	margin-bottom: 10px;
+	border: 0.5px solid #ccc;
+	background-color: transparent;
+}
+
+.container .post2{
+	width: 40%;
+	height:30px;
+	border-radius:30px;
+	background-repeat:no-repeat;
+	background-size:50px;
+	background-position:left 5px center;
+	padding-left:65px;
+	margin-top: 10px;
+	text-align:left;
+	margin-bottom: 10px;
+	border: 0.5px solid #ccc;
+	background-color: transparent;
+}
+
+
+.container .contact #post3{
+	width: 40%;
+	height:30px;
+	border:none;
+}
 
 .prenom {
-background-image: url(../img/bg_form_name.svg);	
-} 
+background-image: url(../img/bg_form_name.svg);
+}
 
 .mail{
-background-image: url(../img/bg_form_mail.svg);	
-} 
+background-image: url(../img/bg_form_mail.svg);
+}
 
 .message{
-background-image: url(../img/bg_form_message.svg);	
-} 
+background-image: url(../img/bg_form_message.svg);
+}
 
 .contact form {
 padding-bottom:30px;
-} 
+}
 
 .submit{
 	display: inline-block;
@@ -336,11 +386,11 @@ nav {
 
 img {
 	width: 100px;
-} 
+}
 
 
 /*Section image*/
-  
+
 
 .bonjour {
 	padding: 120px 80px;
@@ -361,12 +411,12 @@ img {
 	color:#d43c62;
 	text-align:left;
 	font-weight: bold;
-} 
+}
 
 
 .realisations{
 	text-align: left;
-}	
+}
 
 
 .realisations article img {
@@ -374,15 +424,15 @@ img {
 	padding-left: 12px;
 	padding-bottom: 8px;
 	width: 350px;
-}	
+}
 
 .right {
 	float: right;
-}	
+}
 
 .left {
 	float: left;
-}	
+}
 
 
 /*Form*/
@@ -458,24 +508,24 @@ img {
 	vertical-align: middle;
 	padding-right: 10px;
 	transition:2s;
-} 
+}
 
 header img:hover {
 	width: 85px;
-} 
+}
 
 header h1:hover {
 	color:#d43c62;
-} 
+}
 
 header img:hover {
 	width: 85px;
-} 
+}
 
 header h1{
 	display: inline-block;
 	transition:2s;
-} 
+}
 
 header nav a:hover {
 	color:#d43c62;
@@ -505,7 +555,7 @@ header nav i {
 .competences{
 	display : inline-block;
 	width: calc(100%/3);
-} 
+}
 
 
 
@@ -516,21 +566,21 @@ header nav i {
 	width: calc(100%/3 - 0.5em);
 	padding-right: 10px;
 	padding-left: 10px;
-} 
+}
 
 
 @keyframes effet {
-  
-  from {transform: translateY(0);} 
- 
+
+  from {transform: translateY(0);}
+
  	to {transform: translateY(40px);}
-	
+
 	}
 
 
 span.cercle:hover {
 	animation: effet 0.7s ease infinite alternate;
-} 
+}
 
 
 
