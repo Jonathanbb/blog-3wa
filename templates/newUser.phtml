@@ -1,0 +1,10 @@
+<main class ="container">
+  <article class="">
+    <?php var_dump($user)?>
+    <h2>bonjour <?php echo $user[0]['prenom'] ?></h2>
+    <p><strong>voici vos informations, conservez-les précieusement !</strong></p>
+    <p><span  class="user">Votre mot de passe : </span><em><?= $user[0]['mot_de_passe'] ?></em></p>
+    <p><span  class="user">Votre pseudo : </span><em><?= $user[0]['pseudo'] ?></em></p>
+    <p><span  class="user">Votre mail :</span><em><?= $user[0]['email'] ?></em></p>
+  </article>
+</main>

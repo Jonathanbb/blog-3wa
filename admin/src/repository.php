@@ -13,6 +13,7 @@ function openDatabase(string $database, string $user, string $password) : PDO
   return new PDO("mysql:host=localhost;dbname=$database", 'root', 'troiswa');
 }
 
+//création d'un utilisateur
 function addUser(PDO $db)
 {
   $statement = $db->prepare('INSERT INTO utilisateur(nom, prenom, email, pseudo, mot_de_passe)
@@ -27,6 +28,33 @@ function addUser(PDO $db)
   	));
     }
   return $statement;
+}
+
+
+function findUser(PDO $db, string $id) : array
+{
+  $statement = $db->prepare("SELECT `nom`, `prenom`, `mot_de_passe`, `pseudo`, `email`
+  FROM `utilisateur`
+  WHERE `id` = ?");
+  $err = $statement->execute([$id]);
+
+  return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+/**
+ * Trouver un utilisateur par son pseudo
+ *
+ * @param  PDO    $db     [description]
+ * @param  string $pseudo [description]
+ * @return array          [description]
+ */
+function findUserByPseudo(PDO $db, string $pseudo)
+{
+  $statement = $db->prepare("SELECT * FROM `utilisateur`
+  WHERE `pseudo` = ?");//where correspond aux requêtes personnalisée (recherche effectuée en fonction de la donnée saisise dans pseudo)
+  $err = $statement->execute([$pseudo]);
+
+  return $statement->fetch(PDO::FETCH_ASSOC);
 }
 
 

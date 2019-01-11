@@ -6,8 +6,10 @@
 		<h3><strong> Auteur : <?= $oneArticle['prenom']." ".$oneArticle['nom']?></strong><h3>
 			<img class ="picture" src=../img/<?= $oneArticle['image'] ?>>
 			<p><?= $oneArticle['texte'] ?></p>
-			<h2>Ecrivez un commentaire</h2>
+
 			<!--<p>?= $showComment[0]['texte'] ?></p>-->
+			<?php if(isset($_SESSION['user'])) : ?>
+			<h2>Ecrivez un commentaire</h2>
 			<form class="" action="comment.php" method="post">
 				<!-- input caché qui reprend l'id de l'article que nous voulons commenter et qui affecte
 				cette valeur dans commentaire ("billet" qui est = à l'id dans billet) -->
@@ -16,9 +18,12 @@
 				<p>
 					<input class = "submit" type="submit" value="add" name="add">
 				</p>
+				<?php endif ?>
+
+				<h2>Commentaires</h2>
 				<?php foreach($showComment as $a) : ?>
 					<p> Date : <?= substr($a['datePublication'],0,10) ?></p>
-					<p> Commentaire: <?= $a['texte'] ?></p>
+					<p> <?= $a['texte'] ?></p>
 				<?php endforeach ?>
 		</form>
 	</main>

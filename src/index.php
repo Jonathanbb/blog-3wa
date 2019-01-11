@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include "../admin/src/repository.php";
 //include "users.php";
