@@ -4,6 +4,7 @@ include "../admin/src/repository.php";
 include "../admin/src/users.php";
 
 $idNum = $_GET["id"];// cf index.phtml l.16, reférence à l'url du lien généré
+
 $db = openDatabase('blog', 'root', 'troiswa');
 /*$article = writeArticle($db);
 var_dump($article);
@@ -11,6 +12,8 @@ var_dump($_POST);*/
 
 /*$author = addAuthor($db);
 var_dump($author);*/
+
+//var_dump($_SESSION);
 
 $oneArticle = displayOnearticle ($db,$idNum);
 /*$comment = writeComment ($db);

@@ -14,6 +14,7 @@
 				<!-- input caché qui reprend l'id de l'article que nous voulons commenter et qui affecte
 				cette valeur dans commentaire ("billet" qui est = à l'id dans billet) -->
 				<input type="hidden" name="billet" value="<?= $oneArticle['id']?>" />
+				<input type="hidden" name="auteur" value="<?= $_SESSION['user']['id']?>" />
 				<textarea type="text" class= "post" name="texte" placeholder ="Ecrire votre commentaire" ></textarea>
 				<p>
 					<input class = "submit" type="submit" value="add" name="add">
@@ -27,6 +28,7 @@
 					<?php endif ?>
 
 				<?php foreach($showComment as $a) : ?>
+					<p> Nom : <?= $a['prenom'] ?></p>
 					<p> Date : <?= substr($a['datePublication'],0,10) ?></p>
 					<p> <?= $a['texte'] ?></p>
 				<?php endforeach ?>

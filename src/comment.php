@@ -14,7 +14,6 @@ var_dump($author);*/
 // var_dump($_POST);
 // die;
 $comment = writeComment ($db);
-var_dump($comment);
 /*$productArticle = displayArticle ($db);
 $contactAuthor = displayAuthor($db);*/
 

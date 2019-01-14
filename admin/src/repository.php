@@ -51,12 +51,13 @@ function findUser(PDO $db, string $id) : array
 function findUserByPseudo(PDO $db, string $pseudo)
 {
   $statement = $db->prepare(
-    "SELECT *
+    "SELECT U.*, R.id AS role_id, R.titre
      FROM `utilisateur`as U
      LEFT JOIN `role` as R ON R.`id` = U.`role`
      WHERE `pseudo` = ?");//where correspond aux requêtes personnalisée (recherche effectuée en fonction de la donnée saisise dans pseudo)
   $err = $statement->execute([$pseudo]);
-
+//l.56, on a fait une jointure qui permet de définir et configurer un rôle 'admin ou utilisateur' à chaque personne connectée
+//l.54, on défnit role id dont numéro correspondra à utilisateur(2) ou admininistrateur (1) ; statut rentré manuellement dans base de donnée
   return $statement->fetch(PDO::FETCH_ASSOC);
 }
 
@@ -79,11 +80,12 @@ $statement = $db->prepare('INSERT INTO billet(titre, texte, image, categorie) VA
 
 function writeComment (PDO $db)
 {
-  $statement = $db->prepare('INSERT INTO commentaire(texte, billet) VALUES(:texte, :billet)');
+$statement = $db->prepare('INSERT INTO commentaire (texte, billet, auteur) VALUES(:texte, :billet, :auteur)');
    if(isset($_POST["add"])){
     $err = $statement->execute(array(
     	'texte' => $_POST["texte"],
       'billet'=> $_POST["billet"],
+      'auteur'=> $_POST["auteur"],
     	));
       }
     return $statement;
@@ -93,6 +95,7 @@ function displayComment (PDO $db, string $id)
 {
 $statement = $db->prepare("SELECT *
 FROM `commentaire` AS C
+LEFT JOIN `utilisateur` as U ON U.`id` = C.`auteur`
 WHERE C.`billet` = ?
 ");
 $err = $statement->execute([$id]);
@@ -145,10 +148,12 @@ return $statement->fetchAll(PDO::FETCH_ASSOC);
 
 function displayOnearticle (PDO $db,$idNum)
 {
-$statement = $db->prepare("SELECT B.`id`, B.`titre`,B.`texte`, B.`datePublication`, B.`image`, B.`dateCreation`, U.`nom`,U.`prenom`
+$statement = $db->prepare("SELECT B.`id`, B.`titre`,B.`texte`, B.`datePublication`, B.`image`, B.`dateCreation`, U.`nom`,
+U.`prenom`
 FROM `billet` as B
 LEFT JOIN `utilisateur` as U ON U.`id` = B.`auteur`
-WHERE B.`id`= $idNum");
+WHERE B.`id`= $idNum
+");
 $err = $statement->execute();
 
 return $statement->fetch(PDO::FETCH_ASSOC);//FETCH (sans all) permet de n'afficher qu'un article
