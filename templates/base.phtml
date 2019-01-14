@@ -16,13 +16,15 @@
 		--><nav>
 		<div class = "nav"><i class="fas fa-home"></i><a href="index.php"></i>Accueil</a></div><!--
 		--><div class = "nav"><i class="fas fa-search"></i><a href="">Chercher un article</a></div><!--
-		--><div class = "nav"><i class="fas fa-user"></i><a href="users.php">S'inscrire</a></div><!--
+		--><div class = "nav"><i class="fas fa-user"></i><a href="users.php">S'inscrire</a></div>
 			<?php if(isset($_SESSION['user'])) : ?>
-		--><div class = "nav"><i class="fas fa-sign-in-alt"></i><a href="disconnect.php">Déconnexion</a></div><!--
+	<div class = "nav"><i class="fas fa-sign-in-alt"></i><a href="disconnect.php">Déconnexion</a></div>
 		<?php else : ?>
-		--><div class = "nav"><i class="fas fa-sign-in-alt"></i><a href="connect.php">Connexion</a></div><!--
+		<div class = "nav"><i class="fas fa-sign-in-alt"></i><a href="connect.php">Connexion</a></div>
 		<?php endif ?>
-	--><div class = "nav"><i class="fas fa-folder-open"></i><a href="../admin/src/form.php"></i>Administration</a></div>
+			<?php  if(isset($_SESSION['user']) && $_SESSION['user']['titre'] == 'admin') : ?>
+	<div class = "nav"><i class="fas fa-folder-open"></i><a href="../admin/src/form.php"></i>Administration</a></div>
+		<?php endif ?>
 </nav>
 </header>
 

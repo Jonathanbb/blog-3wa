@@ -21,6 +21,11 @@
 				<?php endif ?>
 
 				<h2>Commentaires</h2>
+
+					<?php if(!isset($_SESSION['user'])) : ?>
+					<p> Vous devez avoir un compte sur notre blog pour commenter un article. Inscrivez vous <a href = "users.php"> ici </a> </p>
+					<?php endif ?>
+
 				<?php foreach($showComment as $a) : ?>
 					<p> Date : <?= substr($a['datePublication'],0,10) ?></p>
 					<p> <?= $a['texte'] ?></p>

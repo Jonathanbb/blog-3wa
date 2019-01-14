@@ -50,8 +50,11 @@ function findUser(PDO $db, string $id) : array
  */
 function findUserByPseudo(PDO $db, string $pseudo)
 {
-  $statement = $db->prepare("SELECT * FROM `utilisateur`
-  WHERE `pseudo` = ?");//where correspond aux requêtes personnalisée (recherche effectuée en fonction de la donnée saisise dans pseudo)
+  $statement = $db->prepare(
+    "SELECT *
+     FROM `utilisateur`as U
+     LEFT JOIN `role` as R ON R.`id` = U.`role`
+     WHERE `pseudo` = ?");//where correspond aux requêtes personnalisée (recherche effectuée en fonction de la donnée saisise dans pseudo)
   $err = $statement->execute([$pseudo]);
 
   return $statement->fetch(PDO::FETCH_ASSOC);
