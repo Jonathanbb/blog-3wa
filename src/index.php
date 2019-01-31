@@ -19,4 +19,4 @@ $productArticle = displayArticle ($db);
 //var_dump($productArticle);
 
 $template = "../templates/index.phtml";
-include "../templates/base.phtml";
+include "../templates/base.phtml"; 
